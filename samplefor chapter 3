@@ -1,0 +1,30 @@
+'''
+Accessing Text From the Web
+Tokenize the texts accessed from the web
+'''
+import nltk
+from urllib import *
+url=raw_input("Please enter the URL")  #sample URL="http://www.gutenberg.org/files/2554/2554.txt"
+raw=urlopen(url).read()
+
+def tokenize(raw):
+    '''
+    This function breaks the raw text(i.e "Strings") into words and punctuation.
+    Further we convert these tokens into Text which can be used to perform operations like collocations etc...
+    '''
+    tokens=nltk.word_tokenize(raw)        
+    text=nltk.Text(tokens)
+    #text.collocations()
+    #text.concordance(string)
+    return text
+
+        
+
+
+
+
+
+
+
+
+
